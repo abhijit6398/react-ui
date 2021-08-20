@@ -4,7 +4,6 @@ import { Link } from '@material-ui/core';
 import { dispatchProductDetail } from './action';
 import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
-import { CallToActionSharp } from '@material-ui/icons';
 
 export default function ProductsDetail(props) {
     const { onAdd } = props;
