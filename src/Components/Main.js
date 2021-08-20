@@ -7,7 +7,7 @@ import Cart from './MainPage/Cart';
 import Login from './Auth/Login';
 import PageNotFound from './MainPage/PageNotFound';
 import { ProductsDetail, ProductsList } from './Products/index'
-
+import PrivateRoutes from './../Components/Auth/PrivateRoute'
 
 export default function Main(props) {
     const [auth, setAuth] = useState(false)
@@ -53,15 +53,7 @@ export default function Main(props) {
         setAuth(false)
     }
 
-    function PrivateRoutes({ component: Component, auth, ...rest }) {
-        return <Route
-            {...rest}
-            render={(props) => auth ?
-                <Component {...props} />
-                : <Redirect to={{ pathname: '/login' }} />
-            }
-        />
-    }
+
 
 
     return (
@@ -75,12 +67,12 @@ export default function Main(props) {
 
                 <Route path='/login' render={(props) => <Login {...props} loginHandler={loginHandler} />} />
 
-                {auth === true ?
+                {/* {auth === true ?
                     <Route path='/cart' render={(props) => <Cart {...props} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onCheckout={onCheckout} />} />
                     : <Redirect to='/login' />
-                }
+                } */}
 
-                {/* <PrivateRoutes auth={auth} path='/cart' component={Cart} /> */}
+                <PrivateRoutes auth={auth} path='/cart' component={(props) => <Cart {...props} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onCheckout={onCheckout} />} />
 
                 <Route render={() => <PageNotFound />} />
             </Switch>
