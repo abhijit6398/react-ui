@@ -1,36 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import { Link } from '@material-ui/core';
-
+import { dispatchProductDetail } from './action';
+import { bindActionCreators } from 'redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { CallToActionSharp } from '@material-ui/icons';
 
 export default function ProductsDetail(props) {
     const { onAdd } = props;
-    const [productData, setProductData] = useState({})
-    const [isLoading, setIsLoading] = useState(true)
+    const productData = useSelector((state) => state.productsReducer.productDetail)
+    const dispatch = useDispatch()
+    const action = bindActionCreators({
+        dispatchProductDetail
+    }, dispatch)
 
-
-    const getProductData = async () => {
+    const getProductData = useCallback(async () => {
         const res = await axios.get('https://api.jsonbin.io/b/611f36ebc5159b35ae011d6d')
-        //   console.log("reso",res.data)
         const findProductData = res.data.find((pro) => pro.id === props.match.params.id)
-        //   console.log(findProductData)
-        setProductData(findProductData);
-        setIsLoading(false)
-    }
+        action.dispatchProductDetail(findProductData)
+    }, [props.match.params.id])
     useEffect(() => {
         getProductData()
         return () => {
             console.log("cleaned up")
         }
-    }, [])
-    // console.log("prop",props)
-    // console.log(cart)
+    }, [getProductData])
     return (
         <div>
-            {/* <h1>Datail Product : {props.match.params.id}</h1> */}
 
             {
-                isLoading ? <center><b><h1>Page Loading</h1></b></center>
+                productData.isProductDetailLoading ? <center><b><h1>Page Loading</h1></b></center>
                     :
                     <div className="container">
                         <div className="row">
@@ -52,14 +51,14 @@ export default function ProductsDetail(props) {
                                     <h4><span className="badge badge-success">3.6 <img style={{ marginTop: '-5px' }} src="https://img.icons8.com/material-outlined/24/000000/star--v2.png" width="20px" /></span></h4>&nbsp;
                                     <small> 2,771 ratings and 305 reviews</small>
                                 </div>
-                                <div className="m-1">
+                                {/* <div className="m-1">
                                     <span>Select Colors : </span>
                                     {
                                         productData.colors.map((color, index) => (
                                             <button key={index} style={{ backgroundColor: `${color}`, color: `${color}`, outline: 'none', margin: '0 2px', cursor: 'pointer', border: 'none', boxShadow: '0 0 3px black', borderRadius: '20px' }}>0</button>
                                         ))
                                     }
-                                </div>
+                                </div> */}
                                 <div>
                                     <h6>Available Offers :</h6>
                                     <ul type="none" >
