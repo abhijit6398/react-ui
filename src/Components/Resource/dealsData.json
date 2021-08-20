@@ -1,0 +1,50 @@
+[
+    {
+        "id":1,
+        "img":"https://rukminim1.flixcart.com/image/150/150/kplisnk0/bedsheet/t/s/l/red-11096-flat-chhavi-india-original-imag3sytenmagyam.jpeg?q=70",
+        "name":"BedSheets",
+        "description":"Raymond"
+    },
+    {
+        "id":2,
+        "img":"https://rukminim1.flixcart.com/image/150/150/km9ht3k0/sari/f/y/u/free-s185457-f-fabwomen-unstitched-original-imagf7gx6cztfqps.jpeg?q=70",
+        "name":"Sarees",
+        "description":"Saara"
+    },
+    {
+        "id":3,
+        "img":"https://rukminim1.flixcart.com/flap/150/150/image/e3184b114b0f4581.jpeg?q=70",
+        "name":" Rakhis",
+        "description":"Best Product"
+    },
+    {
+        "id":4,
+        "img":"https://rukminim1.flixcart.com/image/150/150/kg15ocw0/ethnic-set/s/f/f/xl-sy826-cb-sringam-original-imafwd2ae7ux9hzq.jpeg?q=70",
+        "name":"Kurtees",
+        "description":"Libas"
+    },
+    {
+        "id":5,
+        "img":"https://rukminim1.flixcart.com/image/150/150/faucet/k/c/z/f160027cp-hindware-original-imaefqjuw9qfvnhq.jpeg?q=70",
+        "name":"Bathroom ",
+        "description":"Best Selling"
+    },
+    {
+        "id":6,
+        "img":"https://rukminim1.flixcart.com/image/150/150/k0flmkw0/shoe/s/c/h/dtaw19fw-030-8-ducati-red-original-imafk8cy7ggueb23.jpeg?q=70",
+        "name":"USPA,Ducati",
+        "description":" Footwear"
+    },
+    {
+        "id":7,
+        "img":"https://rukminim1.flixcart.com/image/150/150/khcb7gw0/kids-lehenga-choli/e/d/y/3-4-years-glc010-chako-fashion-dream-original-imafxdt4kfncfegz.jpeg?q=70",
+        "name":"Boy's ",
+        "description":"SmartRaho"
+    },
+    {
+        "id":8,
+        "img":"https://rukminim1.flixcart.com/image/150/150/kmwcuq80/power-bank/u/h/o/power-bank-power-neo-20k-poly-bk-power-neo-20k-poly-bk-intex-original-imagfp7gytr2c9ta.jpeg?q=70",
+        "name":"Fast Charging",
+        "description":"Intex"
+    }
+]
